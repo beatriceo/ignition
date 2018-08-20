@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
 
 
   def edit
+    # User id
   end
 
   def update
@@ -21,7 +22,10 @@ class ListingsController < ApplicationController
   end
 
   def create
+    # User id
     @listing = Listing.new(listing_params)
+    @listing.user = User.find(params[:user_id])
+      # raise
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -34,6 +38,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    # user id
     @listing.destroy
     redirect_to listings_path
   end
@@ -45,6 +50,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:transportation_type, :cost, :location, :date_start, :date_end, :rating, :description)
+    params.require(:listing).permit(:transportation_type, :cost, :location, :date_start, :date_end, :rating, :description, :user_id)
   end
 end
