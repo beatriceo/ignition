@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :offers
-  has_many :listings
+  has_many :offers, dependent: :destroy
+  has_many :listings, dependent: :destroy
   validates :rating, inclusion: {in: (0..5).to_a}, numericality: {only_integer: true}
 
   # has_many :listings, through: :offers
