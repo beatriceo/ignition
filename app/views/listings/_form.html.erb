@@ -1,0 +1,13 @@
+<%= simple_form_for(@listing) do |l| %>
+  <%= l.input :transportation_type, input_html: { autocomplete: "off" } %>
+  <%= l.input :cost, input_html: { autocomplete: "off" } %>
+  <%= l.input :location, input_html: { autocomplete: "off" } %>
+  <%= l.input :date_start, input_html: { autocomplete: "off" } %>
+  <%= l.input :date_end, input_html: { autocomplete: "off" } %>
+  <%= l.input :rating, collection: 0..5 %>
+  <%= l.input :description, as: :text, input_html: { autocomplete: "off" } %>
+
+<!--      <#%= l.input :photo %>
+   <#%= l.input :photo_cache, as: :hidden %> -->
+  <%= l.button :submit, class: "btn btn-primary" %>
+<% end %>
