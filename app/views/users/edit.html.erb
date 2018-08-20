@@ -1,2 +1,12 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Editing <%= @user.email %>'s Information</h1>
+
+<%= simple_form_for(@user) do |t| %>
+  <%= t.input :email  %>
+  <%= t.input :username %>
+  <%= t.input :first_name %>
+  <%= t.input :last_name %>
+  <%= t.text_area :description %>
+
+  <%= t.submit :submit %>
+
+<% end %>
