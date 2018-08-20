@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.email %>'s Information </h1>
+
+
+<div>
+  <h2>Email</h2>
+    <%= @user.email %>
+  <h2>Username</h2>
+    <%= @user.username %>
+  <h2>First Name</h2>
+    <%= @user.first_name %>
+  <h2>Last Name</h2>
+    <%= @user.last_name %>
+  <h2>Rating:</h2>
+    <span><%= @user.rating %> / 5 stars</span>
+  <h2>Description</h2>
+    <%= @user.description %>
+</div>
+
+<%= link_to "Edit Information", edit_user_path(@user) %>
+<%= link_to "Delete Account", user_path(@user), method: :delete, data: {
+    confirm: "Are you sure?"
+  } %>
