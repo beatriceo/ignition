@@ -3,11 +3,10 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
-    # @listing.user = User.find(params[:user_id])
+    authorize @listing
   end
 
-  def show
-  end
+  def show; end
 
 
   def edit
@@ -27,15 +26,17 @@ class ListingsController < ApplicationController
     # User id
     listing = Listing.new(listing_params)
     listing.user = User.find(params[:user_id])
+
     if listing.save
       redirect_to listing_path(listing.user, listing)
     else
       render :new
     end
+    authorize listing
   end
 
   def index
-    @listings = Listing.all
+    @listings = policy_scope(Listing).order(created_at: :desc)
   end
 
   def destroy
@@ -48,6 +49,7 @@ class ListingsController < ApplicationController
 
   def find_listing
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   def listing_params

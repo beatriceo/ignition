@@ -1,18 +1,17 @@
 class UsersController < ApplicationController
-  def edit
-    @user = User.find(params[:id])
-  end
+  before_action :find_user, only: [:edit, :update, :show, :destroy]
+
+  def edit; end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user)
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def create
       # Untested Code
     user = User.new(user_params)
-
+    authorize user # I don't know where to put this TODO: Test this method
     if user.save
       redirect_to user_path(user)
     else
@@ -20,18 +19,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
-
+    @user.destroy
     redirect_to root_path
   end
 
   private
+
+  def find_user
+    @user = User.find(params[:id])
+    authorize @user
+  end
 
   def user_params
     params.require(:user).permit(:email, :username, :first_name, :last_name, :description)
