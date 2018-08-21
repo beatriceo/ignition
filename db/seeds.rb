@@ -111,4 +111,18 @@ while i < 5
   offer.save
   i += 1
 end
+
+def create_admin
+  user = User.new(
+    email: "admin@lewagon.com",
+    username: "admin",
+    password: "admin1",
+    admin: true
+    )
+
+  user.save
+end
+
+create_admin
+
 puts "Complete!"

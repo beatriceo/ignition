@@ -16,7 +16,10 @@
     <%= @user.description %>
 </div>
 
-<%= link_to "Edit Information", edit_user_path(@user) %>
-<%= link_to "Delete Account", user_path(@user), method: :delete, data: {
-    confirm: "Are you sure?"
-  } %>
+
+<% if policy(@user).edit? %>
+  <%= link_to "Edit Information", user_edit_path(@user) %>
+  <%= link_to "Delete Account", user_path(@user), method: :delete, data: {
+      confirm: "Are you sure?"
+    } %>
+<% end %>
