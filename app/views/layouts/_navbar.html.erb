@@ -43,7 +43,18 @@
        <a href="#">Rent Out</a>
     </div>
     <div class="profile">
-      <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %>
+      <% if current_user.nil? %>
+        <%= link_to "Login", new_user_session_path  %>
+      <% else %>
+        <div class="dropdown">
+          <img src="https://avatars2.githubusercontent.com/u/40055789?v=4" class="avatar dropdown-toggle img-circle" data-toggle="dropdown">
+          <!--%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %-->
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Profile</a></li>
+            <li><%= link_to "Logout", destroy_user_session_path %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
