@@ -14,7 +14,7 @@
   <div class="flex-row">
     <div class="center-cards">
       <% @listings.each do |listing| %>
-        <%= link_to listing_home_path(listing) do %>
+        <%= link_to listing_home_path(listing), class: "card-link" do %>
           <%= render "layouts/card", listing: listing %>
         <% end %>
       <% end %>
