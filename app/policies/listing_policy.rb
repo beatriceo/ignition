@@ -17,6 +17,10 @@ class ListingPolicy < ApplicationPolicy
     return true
   end
 
+  def display?
+    return true
+  end
+
   def new?
     create?
   end

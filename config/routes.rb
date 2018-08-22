@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   # index show new create edit update destroy
 
+  get '/listings/:id', to: 'listings#display', as: :listing_home
+
 
   get '/users/new', to: 'users#new'
   get '/users/:id', to: 'users#show', as: :user
