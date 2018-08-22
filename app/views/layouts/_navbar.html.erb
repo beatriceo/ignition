@@ -44,14 +44,18 @@
        <a href="#">Rent</a>
        <a href="#">Rent Out</a>
     </div>
-   <div class="profile">
-      <div class="dropdown">
-      <img src="https://avatars2.githubusercontent.com/u/40055789?v=4" class="img-circle" data-toggle="dropdown">
-      <ul class="dropdown-menu dropdown-menu-right custom-navbar-dropdown-menu">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Log Out</a></li>
-      </ul>
-     </div>
+    <div class="profile">
+      <% if current_user.nil? %>
+        <%= link_to "Login", new_user_session_path  %>
+      <% else %>
+        <div class="dropdown">
+          <img src="https://avatars2.githubusercontent.com/u/40055789?v=4" class="avatar dropdown-toggle img-circle" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="#">Profile</a></li>
+            <li><%= link_to "Logout", destroy_user_session_path %></li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
