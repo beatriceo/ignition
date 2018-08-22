@@ -17,6 +17,9 @@
   .left-side {
     justify-content: flex-start;
     .logo {
+      img {
+        width: 4.8em;
+      }
       margin: 0 1em;
     }
     .search-bar {
@@ -44,5 +47,6 @@
     }
   }
 }
+
 
 

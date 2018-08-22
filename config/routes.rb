@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   delete '/users/:id', to: 'users#destroy'
 
   get '/users/:user_id/listings/', to: 'listings#index', as: :listings
-  get '/users/:user_id/listings/new', to: 'listings#new'
+  get '/users/:user_id/listings/new', to: 'listings#new', as: :listing_new
   get '/users/:user_id/listings/:id', to: 'listings#show', as: :listing
   post '/users/:user_id/listings', to: 'listings#create'
   get '/users/:user_id/listings/:id/edit', to: 'listings#edit', as: :listing_edit

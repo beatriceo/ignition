@@ -1,7 +1,9 @@
 <div class="custom-navbar">
   <div class="left-side half">
     <div class="logo">
-      Logo
+      <%= link_to root_path do %> <!-- this 'do' allows us to make a link out of the image. Line 4 and 5 are related  -->
+        <%= image_tag 'logo.png' %>
+      <% end  %>
     </div>
     <div class="search-bar">
       <div class="input-group">
