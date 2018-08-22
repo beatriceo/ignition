@@ -7,32 +7,32 @@
     </div>
     <div class="search-bar">
       <div class="input-group">
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </div><!-- /btn-group -->
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seats <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li><a href="#">2 Seater</a></li>
-            <li><a href="#">4 Seater</a></li>
-            <li><a href="#">4+ Seater</a></li>
-          </ul>
-        </div><!-- /btn-group -->
-          <%= form_tag root_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Find a car"
-            %>
-          <% end %>
-          <!-- <input type="text" class="form-control" aria-label="..."> -->
+        <form class="form-inline">
+          <div class="form-group">
+            <%= select_tag :seats, options_for_select(["2", "4", "4+"], params[:seats]), class: "form-control", include_blank: "Seats" %>
+          </div>
+          <div class="form-group">
+            <%= select_tag :transportation_type, options_for_select(["Car", "Boat", "Motorcycle"], params[:transportation_type]), class: "form-control", include_blank: "Category" %>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                id: "address-input",
+                placeholder: "Enter a location"
+              %>
+
+              <script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+              <script>
+                var placesAutocomplete = places({
+                  container: document.querySelector('#address-input'),
+                });
+              </script>
+
+            </div>
+          </div>
+        </form>
       </div><!-- /input-group -->
     </div>
   </div>

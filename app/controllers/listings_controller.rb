@@ -3,8 +3,8 @@ class ListingsController < ApplicationController
 
   def home
     # @listings = policy_scope(Listing).order(created_at: :desc)
-    if params[:query].present?
-      @listings = Listing.where("transportation_type ILIKE ?", "%#{params[:query]}%")
+    if params[:transportation_type].present? || params[:query].present?
+      @listings = Listing.where("transportation_type ILIKE ? AND location ILIKE ?", "%#{params[:transportation_type]}%", "%#{params[:query]}%")
     else
       @listings = Listing.all
     end
