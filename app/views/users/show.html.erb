@@ -9,6 +9,14 @@
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
       <h2 class="italics" ><%= @user.email %></h2>
     </div>
+    <% if policy(@user).edit? %>
+      <div class="flex-end">
+        <%= link_to "Edit Information", user_edit_path(@user), class: "btn btn-primary" %>
+        <%= link_to "Delete Account", user_path(@user), class: "btn btn-danger", method: :delete, data: {
+            confirm: "Are you sure?"
+          } %>
+      </div>
+    <% end %>
   </div>
 
   <div class="description-container">
@@ -32,9 +40,3 @@
   </div>
 </div>
 
-<% if policy(@user).edit? %>
-  <%= link_to "Edit Information", user_edit_path(@user) %>
-  <%= link_to "Delete Account", user_path(@user), method: :delete, data: {
-      confirm: "Are you sure?"
-    } %>
-<% end %>
