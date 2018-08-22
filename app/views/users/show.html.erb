@@ -1,21 +1,36 @@
-<h1><%= @user.email %>'s Information </h1>
+<!-- email username first_name last_name rating / 5 description -->
 
+<div class="user-container">
+  <div class="profile">
+    <div class="profile-pic">
+      <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle"%>
+    </div>
+    <div class="profile-text">
+      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h2 class="italics" ><%= @user.email %></h2>
+    </div>
+  </div>
 
-<div>
-  <h2>Email</h2>
-    <%= @user.email %>
-  <h2>Username</h2>
-    <%= @user.username %>
-  <h2>First Name</h2>
-    <%= @user.first_name %>
-  <h2>Last Name</h2>
-    <%= @user.last_name %>
-  <h2>Rating:</h2>
-    <span><%= @user.rating %> / 5 stars</span>
-  <h2>Description</h2>
-    <%= @user.description %>
+  <div class="description-container">
+    <h2>Description</h2>
+    <div class="description">
+      <div class="description-text">
+        <p><%= @user.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="rating">
+    <h2>Average Rating</h2>
+    <ul class="list-inline">
+      <% @user.rating.times do %>
+        <li><i class="fa fa-star"></i></li>
+      <% end %>
+      <% (5 - @user.rating).times do %>
+        <li><i class="far fa-star"></i></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-
 
 <% if policy(@user).edit? %>
   <%= link_to "Edit Information", user_edit_path(@user) %>

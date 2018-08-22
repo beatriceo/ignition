@@ -1,0 +1,53 @@
+.user-container {
+  margin: 0 1in;
+
+  h2 {
+    font-size: 1.5em;
+  }
+  .profile {
+    margin-top: 2em;
+    background: white;
+    display: flex;
+
+    .profile-pic {
+      display: flex;
+      align-items: center;
+      margin-right: 3em;
+      img {
+        width: 10em;
+      }
+    }
+
+    .profile-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h1 {
+        margin: 0 0 .5em 0 ;
+      }
+      h2 {
+        margin: 0;
+      }
+      .italics {
+        font-style: italic;
+      }
+    }
+  }
+
+  .description {
+    height: 10em;
+    background: $text-bg;
+    margin-top: 1em;
+
+    .description-text {
+      padding: 1em;
+      margin: 0;
+    }
+  }
+
+  .rating {
+    i {
+      color: $primary;
+    }
+  }
+}
