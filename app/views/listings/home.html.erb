@@ -1,0 +1,23 @@
+
+<!-- <div class="listings-container">
+  <div class="row flex-row">
+    <%# @listings.each do |listing| %>
+     <div class="col-xs-12 col-sm-8 col-md-6 col-lg-3">
+       <%#= render "layouts/card", listing: listing %>
+     </div>
+    <%# end %>
+  </div>
+</div> -->
+
+
+<div class="listings-container">
+  <div class="flex-row">
+    <div class="center-cards">
+      <% @listings.each do |listing| %>
+        <%= render "layouts/card", listing: listing %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

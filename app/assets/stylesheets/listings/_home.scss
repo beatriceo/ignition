@@ -1,0 +1,22 @@
+.listings-container {
+  margin: 0 2in;
+
+  .flex-row {
+    display: flex;
+    justify-content: center;
+
+    .center-cards{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      .card {
+        flex-shrink: 0;
+        margin: 0 .5em;
+        margin-bottom: 1.5em;
+      }
+
+    }
+
+  }
+}
+

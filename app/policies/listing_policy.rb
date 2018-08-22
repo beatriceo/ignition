@@ -9,6 +9,10 @@ class ListingPolicy < ApplicationPolicy
     return true
   end
 
+  def home?
+    return true
+  end
+
   def show?
     return true
   end
@@ -32,4 +36,5 @@ class ListingPolicy < ApplicationPolicy
   def destroy?
     record.user == user || user.admin
   end
+
 end
