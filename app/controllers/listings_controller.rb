@@ -1,5 +1,11 @@
 class ListingsController < ApplicationController
-  before_action :find_listing, only: [:show, :edit, :update, :destroy]
+  before_action :find_listing, only: [:show, :edit, :update, :destroy, :display]
+
+  def home
+    # @listings = policy_scope(Listing).order(created_at: :desc)
+    @listings = Listing.all
+    authorize @listings
+  end
 
   def new
     @listing = Listing.new
@@ -7,7 +13,7 @@ class ListingsController < ApplicationController
   end
 
   def show; end
-
+  def display; end
 
   def edit
     # User id

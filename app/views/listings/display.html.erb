@@ -1,0 +1,65 @@
+<!-- <h1><%= @listing.transportation_type %></h1>
+
+<div>
+  <h2>Type of Car</h2>
+    <p><%= @listing.transportation_type %></p>
+  <h2>Cost</h2>
+    <p><%= @listing.cost %></p>
+  <h2>Location</h2>
+    <p><%= @listing.location %></p>
+  <h2>Date Start</h2>
+    <p><%= @listing.date_start %></p>
+  <h2>Date End</h2>
+    <p><%= @listing.date_end %></p>
+  <h2>Rating</h2>
+    <p><%= @listing.rating %> / 5 stars</p>
+  <h2>Description</h2>
+    <p><%= @listing.description %></p>
+  <br />
+  <h2>Photo</h2>
+    <%# if @listing.photo.url.nil? %>
+      <p>There is no Image to be displayed</p>
+    <%# else %>
+      <%#= cl_image_tag @listing.photo, height: 200, width: 200, crop: :fill %>
+    <%# end %>
+</div>
+ -->
+
+<div class="display-container">
+ <div class="banner" style="background-image: url(<%= image_path @listing.photo %>"></div>
+ <div class="half-container">
+    <div class="left">
+      <div class="info">
+        <div class="text">
+          <div><h2>Type</h2><%= @listing.transportation_type %></div>
+          <div><h2>Location</h2> <%= @listing.location %></div>
+        </div>
+        <div class="profile">
+          <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %><span><%= @listing.user.username %></span>
+        </div>
+      </div>
+      <div class="description text-display">
+        <div>
+          <h2>Description</h2>
+          <%= @listing.description %>
+        </div>
+      </div>
+      <div class="review text-display">
+        <div>
+          <h2>Review</h2>
+          It's actually a really fast car.
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="reserve"></div>
+      <div class="map"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
