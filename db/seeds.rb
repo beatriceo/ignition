@@ -121,13 +121,14 @@ listings = [{
         rating: 4,
         description: "Surprise your loved one with a present delivered by helicoper!"
         }, {
-            transportation_type: "Yaht",
-            cost: "$5620",
-            location: "Fredrickton",
-            date_start: "2018-08-31",
-            date_end: "2018-08-31",
-            rating: 1,
-            description: "Do whatever you want for it for 1 day! Host a party or smth i don't care"
+            transportation_type: "car",
+            cost: "100",
+            location: "copenhagen",
+            date_start: "2018/08/23",
+            date_end: "2018/08/23",
+            rating: "3",
+            photo: Rails.root.join("app/assets/images/auto.jpg").open,
+            description: "something"
           }]
 
 
@@ -169,6 +170,9 @@ users =  [{
           }]
 
 puts "Adding Template Data to DB"
+
+
+
 
 i = 0
 while i < 5

@@ -14,7 +14,7 @@
             <%= select_tag :seats, options_for_select(["2", "4", "4+"], params[:seats]), class: "form-control", include_blank: "Seats" %>
           </div>
           <div class="form-group">
-            <%= select_tag :transportation_type, options_for_select(["Car", "Boat", "Motorcycle"], params[:transportation_type]), class: "form-control", include_blank: "Category" %>
+            <%= select_tag :transportation_type, options_for_select(["Berline", "Sport", "SUV","Crossover","Coupe","Convertible","Van","Minibus","Limousine"], params[:transportation_type]), class: "form-control", include_blank: "Category" %>
           </div>
           <div class="form-group">
             <div class="input-group">
