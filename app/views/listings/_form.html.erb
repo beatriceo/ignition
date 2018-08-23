@@ -1,7 +1,22 @@
 <%= simple_form_for(@listing) do |l| %>
   <%= l.input :transportation_type, input_html: { autocomplete: "off" } %>
   <%= l.input :cost, input_html: { autocomplete: "off" } %>
-  <%= l.input :location, input_html: { autocomplete: "off" } %>
+
+  <div class="form-group string required listing_location"><label class="form-control-label string required" for="listing_location">Location <abbr title="required">*</abbr></label>
+    <%= text_field_tag :location, params[:location],
+      class: "form-control string required",
+      id: "address-location",
+      name: "listing[location]"
+    %>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+    <script>
+      var placesAutocomplete = places({
+        container: document.querySelector('#address-location'),
+      });
+    </script>
+
+  </div>
+
   <%= l.input :date_start, input_html: { autocomplete: "off" } %>
   <%= l.input :date_end, input_html: { autocomplete: "off" } %>
   <%= l.input :rating, collection: 0..5 %>
