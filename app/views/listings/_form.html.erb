@@ -18,8 +18,7 @@
   </div>
 
     <%= simple_form_for :search, method: "get" do |l| %>
-      <%= l.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= l.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= l.input :dates, input_html: { id: "range_start" } %>
     <% end %>
 
 
