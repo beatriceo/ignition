@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :offers, dependent: :destroy
-  validates_presence_of :transportation_type
+  validates_presence_of :transportation_type, inclusion: { in: %w(Berline Sport SUV Crossover Coupe Convertible Van Minibus Limousine) }
   validates_presence_of :cost
   validates_presence_of :location
   validates_presence_of :date_start
@@ -18,6 +18,6 @@ class Listing < ApplicationRecord
   pg_search_scope :search_by_location,
     against: [ :location ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
   }
 end
