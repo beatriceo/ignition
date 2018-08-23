@@ -89,37 +89,41 @@ Offer.destroy_all
 
 puts "Creating Template Data..."
 listings = [{
-    transportation_type: "Car",
-    cost: "$100",
+    transportation_type: "car",
+    cost: "100",
     location: "London",
-    date_start: "2018-08-20",
-    date_end: "2018-08-27",
-    rating: 3,
-    description: "awesome"
+    date_start: "2018/08/23",
+    date_end: "2018/08/23",
+    rating: "4",
+    photo: Rails.root.join("app/assets/images/b.jpg").open,
+    description: "something"
   }, {
-    transportation_type: "Boat",
-    cost: "$200",
-    location: "Madrid",
-    date_start: "2018-09-23",
-    date_end: "2018-10-17",
-    rating: 5,
-    description: "Don't know what to do with it, putting it up for rent."
+    transportation_type: "car",
+    cost: "400",
+    location: "Paris",
+    date_start: "2018/08/23",
+    date_end: "2018/08/23",
+    rating: "5",
+    photo: Rails.root.join("app/assets/images/c.jpg").open,
+     description: "something"
     }, {
-      transportation_type: "Bicycle",
-      cost: "$73",
-      location: "Amsterdam",
-      date_start: "2018-08-31",
-      date_end: "2018-09-25",
-      rating: 1,
-      description: "My really old bike, not that impressive but it'll do the job, maybe?"
+      transportation_type: "car",
+      cost: "250",
+      location: "copenhagen",
+      date_start: "2018/08/23",
+      date_end: "2018/08/23",
+      rating: "5",
+      photo: Rails.root.join("app/assets/images/d.jpg").open,
+      description: "something"
       }, {
-        transportation_type: "Helicopters",
-        cost: "$3600",
-        location: "Los Angeles",
-        date_start: "2018-12-24",
-        date_end: "2018-12-25",
-        rating: 4,
-        description: "Surprise your loved one with a present delivered by helicoper!"
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/e.jpg").open,
+        description: "something"
         }, {
             transportation_type: "car",
             cost: "100",
@@ -129,7 +133,88 @@ listings = [{
             rating: "3",
             photo: Rails.root.join("app/assets/images/auto.jpg").open,
             description: "something"
-          }]
+          }, {
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/f.jpg").open,
+        description: "something"
+        }, {
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/g.jpg").open,
+        description: "something"
+        }, {
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/h.jpg").open,
+        description: "something"
+        },{
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/i.jpg").open,
+        description: "something"
+        },{
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/j.jpg").open,
+        description: "something"
+        },{
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/k.jpg").open,
+        description: "something"
+        },{
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/l.jpg").open,
+        description: "something"
+        },{
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/m.jpg").open,
+        description: "something"
+        }, {
+        transportation_type: "car",
+        cost: "385",
+        location: "casablanca",
+        date_start: "2018/08/23",
+        date_end: "2018/08/23",
+        rating: "3",
+        photo: Rails.root.join("app/assets/images/n.jpg").open,
+        description: "something"
+        }]
 
 
 users =  [{
@@ -175,7 +260,7 @@ puts "Adding Template Data to DB"
 
 
 i = 0
-while i < 5
+while i < 10
   # binding.pry
   listing = Listing.new(listings[i])
   user = User.new(users[i])

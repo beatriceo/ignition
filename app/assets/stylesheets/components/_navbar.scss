@@ -80,11 +80,20 @@
   background-color: #fff ;
   position:relative;
 
+  #seats {
+    color: #696969;
+  }
+
+  #transportation_type {
+    color: #696969;
+  }
+
   .right-side {
     .links {
       a {
         color: $primary;
       }
+
     }
   }
 }
