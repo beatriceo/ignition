@@ -36,6 +36,17 @@
       background: $text-bg;
     }
   }
+
+  .pending-cards {
+    a:hover {
+      text-decoration: none;
+    }
+    .card {
+      .container {
+        margin: 1em;
+      }
+    }
+  }
 }
 
 

@@ -21,7 +21,7 @@ class OffersController < ApplicationController
   def pending
     authorize @offer
     @user = User.find(params[:user_id])
-    @listings = @user.listings;
+    @offers = @user.offers
   end
 
   def destroy

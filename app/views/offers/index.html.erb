@@ -1,7 +1,9 @@
 <div class="offers-container">
   <div class="mini-navbar">
     <h2>Offers Recieved</h2>
-    <h2 class="inactive">Offers Sent</h2>
+    <%= link_to pending_offers_path(@user) do%>
+      <h2 class="inactive">Offers Sent</h2>
+    <% end %>
   </div>
   <p class="italics">You have <%= @listings.length %> cars </p>
   <div class="listing-cards row">
@@ -15,8 +17,6 @@
     <% end %>
   </div>
 </div>
-
-
 <%# SAMPLE DATA
   5.times do
     Listing.create!(
