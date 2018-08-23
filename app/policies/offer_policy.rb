@@ -5,6 +5,9 @@ class OfferPolicy < ApplicationPolicy
     end
   end
 
+  def pending?
+    update?
+  end
   def index?
     update?
   end

@@ -18,6 +18,12 @@ class OffersController < ApplicationController
     @listings = @user.listings;
   end
 
+  def pending
+    authorize @offer
+    @user = User.find(params[:user_id])
+    @listings = @user.listings;
+  end
+
   def destroy
     authorize @offer
   end

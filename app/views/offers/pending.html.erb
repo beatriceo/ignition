@@ -1,0 +1,29 @@
+<div class="offers-container">
+  <div class="mini-navbar">
+    <h2 class="inactive">Offers Sent</h2>
+    <h2>Offers Recieved</h2>
+  </div>
+</div>
+
+
+<%# SAMPLE DATA
+  5.times do
+    Listing.create!(
+      transportation_type: "Vehicle",
+      cost: "$100",
+      location: "London",
+      date_start: "2018-08-23",
+      date_end: "2018-09-09",
+      rating: 5,
+      user_id: 1,
+      description: "This is to test the Offers Page"
+    )
+  end
+  [6, 7, 8, 9, 10].each do |id|
+    3.times do
+      Offer.create(listing_id: id, user_id: rand(1..6))
+    end
+  end
+
+
+ %>
