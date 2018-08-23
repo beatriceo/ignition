@@ -31,7 +31,11 @@
   </div>
   <div class="right-side half">
     <div class="links">
-       <a href="#">Offers</a>
+      <% if current_user %>
+        <%= link_to "Offers", offers_path(current_user) %>
+      <% else %>
+        <%= link_to "Offers", new_user_session_path %>
+      <% end %>
        <%= link_to "Rent", listings_home_path  %>
        <a href="#">Rent Out</a>
     </div>
