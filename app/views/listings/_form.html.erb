@@ -17,8 +17,12 @@
 
   </div>
 
-  <%= l.input :date_start, input_html: { autocomplete: "off" } %>
-  <%= l.input :date_end, input_html: { autocomplete: "off" } %>
+    <%= simple_form_for :search, method: "get" do |l| %>
+      <%= l.input :dates, input_html: { id: "range_start" } %>
+    <% end %>
+
+
+
   <%= l.input :rating, collection: 0..5 %>
   <%= l.input :description, as: :text, input_html: { autocomplete: "off" } %>
   <%= l.input :photo %>

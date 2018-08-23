@@ -9,7 +9,7 @@
 
     <div class="search-bar">
       <div class="input-group">
-        <form class="form-inline">
+        <form class="form-inline" action="/listings">
           <div class="form-group">
             <%= select_tag :seats, options_for_select(["2", "4", "4+"], params[:seats]), class: "form-control", include_blank: "Seats" %>
           </div>
@@ -21,17 +21,8 @@
               <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
-                id: "address-input",
                 placeholder: "Enter a location"
               %>
-
-              <script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
-              <script>
-                var placesAutocomplete = places({
-                  container: document.querySelector('#address-input'),
-                });
-              </script>
-
             </div>
           </div>
         </form>

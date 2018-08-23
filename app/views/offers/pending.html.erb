@@ -1,22 +1,22 @@
 <div class="offers-container">
   <div class="mini-navbar">
-    <h2>Offers Recieved</h2>
-    <%= link_to pending_offers_path(@user) do%>
-      <h2 class="inactive">Offers Sent</h2>
+    <%= link_to offers_path(@user) do%>
+      <h2 class="inactive">Offers Recieved</h2>
     <% end %>
+    <h2>Offers Sent</h2>
   </div>
-  <p class="italics">You have <%= @listings.length %> cars </p>
-  <div class="listing-cards row">
-    <% @listings.each do |entry| %>
-      <div class="listing-card col-xs-12 col-md-6 col-lg-3 ">
-        <h2><%= entry.transportation_type %></h2>
-        <% entry.offers.each do |o| %>
-          <p><%= o.user.first_name %> <%= o.user.last_name %></p>
+  <div class="pending-cards row">
+    <% @offers.each do |offer| %>
+      <div class="container col-xs-12 col-md-8 col-lg-4">
+        <%= link_to  listing_home_path(offer.listing) do %>
+          <%= render "layouts/card", listing: offer.listing %>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
+
 <%# SAMPLE DATA
   5.times do
     Listing.create!(
