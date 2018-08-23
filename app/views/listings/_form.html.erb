@@ -20,7 +20,8 @@
   <%= l.input :date_start, as: :string, input_html: { id: "range_start" } %>
   <%= l.hidden_field :date_end, as: :string, input_html: { id: "range_end" } %>
 
-  <%= l.input :rating, collection: 0..5 %>
+  <%#= l.input :rating, collection: 0..5 %>
+  <%= l.hidden_field :rating, value: rand(3..5) %>
   <%= l.input :description, as: :text, input_html: { autocomplete: "off" } %>
   <%= l.input :photo %>
   <%= l.input :photo_cache, as: :hidden %>
