@@ -40,9 +40,16 @@
         <%= link_to "Login", new_user_session_path  %>
       <% else %>
         <div class="dropdown">
-          <img src="https://avatars2.githubusercontent.com/u/40055789?v=4" class="avatar dropdown-toggle img-circle" data-toggle="dropdown">
+          <div data-toggle="dropdown">
+            <% if current_user.photo.url.nil? %>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="avatar dropdown-toggle img-circle">
+            <% else %>
+              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle img-circle"%>
+            <% end %>
+          </div>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li><a href="#">Profile</a></li>
+            <!-- <li><a href="#">Profile</a></li> -->
+            <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Logout", destroy_user_session_path %></li>
           </ul>
         </div>

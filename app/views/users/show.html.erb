@@ -3,7 +3,12 @@
 <div class="user-container">
   <div class="profile">
     <div class="profile-pic">
-      <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle"%>
+      <% if @user.photo.url.nil? %>
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png", class: "img-circle"%>
+      <% else %>
+        <%= cl_image_tag @user.photo, class: "img-circle"%>
+      <% end %>
+
     </div>
     <div class="profile-text">
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
