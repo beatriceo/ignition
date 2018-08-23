@@ -1,2 +1,2 @@
 import "bootstrap";
-// import "places";
+import "../plugins/flatpickr";
