@@ -52,7 +52,7 @@ class ListingsController < ApplicationController
     listing.user = User.find(params[:user_id])
 
     if listing.save
-      redirect_to root_path
+      redirect_to listing_home_path(listing)
     else
       render :new
     end

@@ -1,5 +1,5 @@
 <%= simple_form_for(@listing) do |l| %>
-  <%= l.input :transportation_type, input_html: { autocomplete: "off" } %>
+  <%= l.input :transportation_type, as: :select, input_html: { autocomplete: "off" }, collection: %w(Berline Sport SUV Crossover Coupe Convertible Van Minibus Limousine) %>
   <%= l.input :cost, input_html: { autocomplete: "off" } %>
 
   <div class="form-group string required listing_location"><label class="form-control-label string required" for="listing_location">Location <abbr title="required">*</abbr></label>
@@ -20,7 +20,8 @@
   <%= l.input :date_start, as: :string, input_html: { id: "range_start" } %>
   <%= l.hidden_field :date_end, as: :string, input_html: { id: "range_end" } %>
 
-  <%= l.input :rating, collection: 0..5 %>
+  <%#= l.input :rating, collection: 0..5 %>
+  <%= l.hidden_field :rating, value: rand(3..5) %>
   <%= l.input :description, as: :text, input_html: { autocomplete: "off" } %>
   <%= l.input :photo %>
   <%= l.input :photo_cache, as: :hidden %>
