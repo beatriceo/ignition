@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to user_edit_path(@user)
   end
 
   def create
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :first_name, :last_name, :description)
+    params.require(:user).permit(:email, :username, :first_name, :last_name, :description, :photo)
   end
 end
