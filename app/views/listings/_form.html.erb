@@ -1,5 +1,5 @@
 <%= simple_form_for(@listing) do |l| %>
-  <%= l.input :transportation_type, input_html: { autocomplete: "off" } %>
+  <%= l.input :transportation_type, as: :select, input_html: { autocomplete: "off" }, collection: %w(Berline Sport SUV Crossover Coupe Convertible Van Minibus Limousine) %>
   <%= l.input :cost, input_html: { autocomplete: "off" } %>
 
   <div class="form-group string required listing_location"><label class="form-control-label string required" for="listing_location">Location <abbr title="required">*</abbr></label>
