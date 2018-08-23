@@ -21,15 +21,14 @@
               <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
-                id: "address-input",
                 placeholder: "Enter a location"
               %>
 
               <script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
               <script>
-                var placesAutocomplete = places({
-                  container: document.querySelector('#address-input'),
-                });
+                // var placesAutocomplete = places({
+                //   container: document.querySelector('#address-input'),
+                // });
               </script>
 
             </div>
