@@ -21,13 +21,13 @@ Rails.application.routes.draw do
   patch '/users/:user_id/listings/:id', to: 'listings#update'
   delete '/users/:user_id/listings/:id', to: 'listings#destroy'
 
-  get '/users/:user_id/offers', to: 'offers#index'
+  get '/users/:user_id/offers', to: 'offers#index', as: :offers
   post 'users/:user_id/offers', to: 'offers#confirm'
   delete 'users/:user_id/offers/:id', to: "offers#destroy"
 
 
   get '/users/:user_id/offers/pending/new', to: 'offers#new'
   post '/users/:user_id/offers/pending', to: 'offers#create'
-  get '/users/:user_id/offers/pending', to: 'offers#pending'
+  get '/users/:user_id/offers/pending', to: 'offers#pending', as: :pending_offers
   delete 'users/:user_id/offers/pending', to: 'offers#cancel'
 end

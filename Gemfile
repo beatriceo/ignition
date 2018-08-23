@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'pg_search'
 gem 'algoliasearch-rails'
 gem 'devise'
 gem 'pundit'
@@ -9,7 +10,6 @@ gem 'carrierwave', '~> 1.2'
 
 # Maps
 gem "geocoder"
-gem 'dotenv-rails', groups: [:development, :test]
 
 #date
 
