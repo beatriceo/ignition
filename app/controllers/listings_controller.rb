@@ -77,3 +77,4 @@ class ListingsController < ApplicationController
     params.require(:listing).permit(:photo, :transportation_type, :cost, :location, :date_start, :date_end, :rating, :description)
   end
 end
+
