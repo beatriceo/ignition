@@ -16,8 +16,19 @@ class ListingsController < ApplicationController
     authorize @listing
   end
 
-  def show; end
-  def display; end
+  def show
+  end
+
+  def display
+    @listings = Listing.where.not(latitude: nil, longitude: nil)
+    @markers = @listings.map do |listing|
+      {
+        lat: listing.latitude,
+        lng: listing.longitude
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+  end
 
   def edit
     # User id
