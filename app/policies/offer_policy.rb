@@ -6,7 +6,7 @@ class OfferPolicy < ApplicationPolicy
   end
 
   def index?
-    return true
+    update?
   end
 
   def new?

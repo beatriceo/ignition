@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+  before_action :find_offer
   def new
     authorize @offer
   end
@@ -12,7 +13,9 @@ class OffersController < ApplicationController
   end
 
   def index
-    authorize @offer
+    @restaurants = policy_scope(Offer).order(created_at: :desc)
+    @user = User.find(params[:user_id])
+    @listings = @user.listings;
   end
 
   def destroy
@@ -22,5 +25,9 @@ class OffersController < ApplicationController
   private
 
   def offer_params; end
-  def find_offer; end
+  def find_offer
+    @user = User.find(params[:user_id])
+    @listings = @user.listings;
+    @offer = @listings[0].offers[0];
+  end
 end
