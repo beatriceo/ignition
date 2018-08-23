@@ -1,4 +1,5 @@
 class Listing < ApplicationRecord
+  include PgSearch
   mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :offers, dependent: :destroy
@@ -12,4 +13,11 @@ class Listing < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+
+  pg_search_scope :search_by_location,
+    against: [ :location ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
 end
