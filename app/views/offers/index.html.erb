@@ -1,10 +1,12 @@
 <div class="offers-container">
   <div class="mini-navbar">
-
+    <h2>Offers Recieved</h2>
+    <h2 class="inactive">Offers Sent</h2>
   </div>
-  <div class="listing-cards">
+  <p class="italics">You have <%= @listings.length %> cars </p>
+  <div class="listing-cards row">
     <% @listings.each do |entry| %>
-      <div class="listing-card">
+      <div class="listing-card col-xs-12 col-md-6 col-lg-3 ">
         <h2><%= entry.transportation_type %></h2>
         <% entry.offers.each do |o| %>
           <p><%= o.user.first_name %> <%= o.user.last_name %></p>
