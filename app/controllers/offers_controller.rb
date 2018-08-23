@@ -19,7 +19,7 @@ class OffersController < ApplicationController
   end
 
   def pending
-    authorize @offer
+    authorize @offer ? @offer : Offer.new
     @user = User.find(params[:user_id])
     @offers = @user.offers
   end
@@ -33,7 +33,11 @@ class OffersController < ApplicationController
   def offer_params; end
   def find_offer
     @user = User.find(params[:user_id])
-    @listings = @user.listings;
-    @offer = @listings[0].offers[0];
+    @listings = @user.listings
+    if @listings[0]
+      @offer = @listings[0].offers[0]
+    else
+      @offer = nil
+    end
   end
 end
