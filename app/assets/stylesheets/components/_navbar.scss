@@ -1,11 +1,13 @@
 .custom-navbar {
   display: flex;
+  position: fixed;
+  top: 0;
+  left:0;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
   height: 4.5em;
-  background: $custom-navbar-primary;
-
+  // background: $custom-navbar-primary;
 
   .half {
     // flex-grow: 1;
@@ -24,16 +26,22 @@
     }
     .search-bar {
       flex-grow: 1;
+      background-color:transparent;
     }
   }
 
   .right-side {
     justify-content: flex-end;
     .links {
-      color: $primary;
+
       flex-grow: 1;
       display: flex;
       justify-content: space-around;
+
+      a {
+        color: #fff;
+      }
+
       a:hover {
         text-decoration: none;
       }
@@ -48,6 +56,35 @@
   }
 }
 
+#seats {
+  background-color:transparent;
+  color:#fff;
+
+}
+
+#transportation_type {
+  background-color:transparent;
+  color:#fff;
+}
+
 #address-input {
   margin-bottom: -6px;
+  background-color: transparent;
+}
+
+.custom-navbar-transparent {
+  background-color: transparent;
+}
+
+.custom-navbar-white {
+  background-color: #fff ;
+  position:relative;
+
+  .right-side {
+    .links {
+      a {
+        color: $primary;
+      }
+    }
+  }
 }
