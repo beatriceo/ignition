@@ -45,7 +45,10 @@ class ListingsController < ApplicationController
 
   def create
     # User id
+    dates = params[:listing][:date_start].scan(/[\d-]+/)
     listing = Listing.new(listing_params)
+    listing.date_start = dates[0]
+    listing.date_end = dates[1]
     listing.user = User.find(params[:user_id])
 
     if listing.save
