@@ -263,25 +263,37 @@ users = [{
 
 puts "Adding Template Data to DB"
 
+users.each do |user|
+  use = User.create!(user)
+  puts use
+  listings.each do |listing|
+    list = Listing.new(listing)
+    list.user_id = use.id
+    puts "trying to save listing now"
+    list.save!
+    puts list
+  end
 
-
-
-i = 0
-while i < 10
-  # binding.pry
-  listing = Listing.new(listings[i])
-  user = User.new(users[i])
-  offer = Offer.new
-
-  listing.user = user
-  offer.listing = listing
-  offer.user = user
-
-  listing.save
-  user.save
-  offer.save
-  i += 1
 end
+
+# i = 0
+# while i < 10
+#   # binding.pry
+#   listing = Listing.new(listings[i])
+#   puts i % 5
+#   puts users[i % 5]
+#   user = User.new(users[i % 5])
+#   offer = Offer.new
+
+#   listing.user = user
+#   offer.listing = listing
+#   offer.user = user
+
+#   listing.save
+#   user.save
+#   offer.save
+#   i += 1
+# end
 
 def create_admin
   user = User.new(
