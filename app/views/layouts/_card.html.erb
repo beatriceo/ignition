@@ -1,23 +1,25 @@
-<div class="card">
-  <% if listing.photo.url.nil? %>
-    <%= image_tag "https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e244f754794055f338bdfad9f8fdca7&auto=format&fit=crop&w=1951&q=80" %>
-  <% else %>
-    <%= cl_image_tag listing.photo%>
+<div class="custom-card">
+  <%= link_to listing_home_path(listing), class: "card-link" do %>
+    <% if listing.photo.url.nil? %>
+      <%= image_tag "https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e244f754794055f338bdfad9f8fdca7&auto=format&fit=crop&w=1951&q=80" %>
+    <% else %>
+      <%= cl_image_tag listing.photo%>
+    <% end %>
+    <div class="info">
+      <div class="type half">
+        <%= listing.transportation_type %>
+      </div>
+      <div class="rating half">
+          <span><%= listing.cost %> / day</span>
+          <ul class="stars list-inline">
+            <% listing.rating.times do %>
+              <li><i class="fa fa-star"></i></li>
+            <% end %>
+            <% (5 - listing.rating).times do %>
+              <li><i class="far fa-star"></i></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
   <% end %>
-  <div class="info">
-    <div class="type half">
-      <%= listing.transportation_type %>
-    </div>
-    <div class="rating half">
-        <span><%= listing.cost %> / day</span>
-        <ul class="stars list-inline">
-          <% listing.rating.times do %>
-            <li><i class="fa fa-star"></i></li>
-          <% end %>
-          <% (5 - listing.rating).times do %>
-            <li><i class="far fa-star"></i></li>
-          <% end %>
-        </ul>
-    </div>
-  </div>
 </div>
