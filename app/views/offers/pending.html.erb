@@ -9,33 +9,34 @@
     <% @offers.each do |offer| %>
       <div class="container col-xs-12 col-md-8 col-lg-4">
         <%= link_to  listing_home_path(offer.listing) do %>
-         <div class="card">
-           <% if offer.listing.photo.url.nil? %>
-             <%= image_tag "https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e244f754794055f338bdfad9f8fdca7&auto=format&fit=crop&w=1951&q=80" %>
-           <% else %>
-             <%= cl_image_tag offer.listing.photo%>
-           <% end %>
-           <%= link_to delete_offer_path(offer), method: :delete, class: "card_delete" do %>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-           <% end %>
-           <div class="info">
-             <div class="type half">
-               <%= offer.listing.transportation_type %>
+         <div class="custom-card">
+           <%= link_to listing_home_path(offer.listing), class: "card-link" do %>
+             <% if offer.listing.photo.url.nil? %>
+               <%= image_tag "https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e244f754794055f338bdfad9f8fdca7&auto=format&fit=crop&w=1951&q=80" %>
+             <% else %>
+               <%= cl_image_tag offer.listing.photo%>
+             <% end %>
+             <%= link_to delete_offer_path(offer), method: :delete, class: "card_delete" do %>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">×</span></button>
+             <% end %>
+             <div class="info">
+               <div class="type half">
+                 <%= offer.listing.transportation_type %>
+               </div>
+               <div class="rating half">
+                   <span><%= offer.listing.cost %> / day</span>
+                   <ul class="stars list-inline">
+                     <% offer.listing.rating.times do %>
+                       <li><i class="fa fa-star"></i></li>
+                     <% end %>
+                     <% (5 - offer.listing.rating).times do %>
+                       <li><i class="far fa-star"></i></li>
+                     <% end %>
+                   </ul>
+               </div>
              </div>
-             <div class="rating half">
-                 <span><%= offer.listing.cost %> / day</span>
-                 <ul class="stars list-inline">
-                   <% offer.listing.rating.times do %>
-                     <li><i class="fa fa-star"></i></li>
-                   <% end %>
-                   <% (5 - offer.listing.rating).times do %>
-                     <li><i class="far fa-star"></i></li>
-                   <% end %>
-                 </ul>
-             </div>
-           </div>
+           <% end %>
          </div>
-
         <% end %>
       </div>
     <% end %>
