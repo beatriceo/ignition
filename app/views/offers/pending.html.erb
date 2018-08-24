@@ -16,7 +16,7 @@
              <% else %>
                <%= cl_image_tag offer.listing.photo%>
              <% end %>
-             <%= link_to delete_offer_path(offer), method: :delete, class: "card_delete" do %>
+             <%= link_to delete_path(offer.user, offer), method: :delete, class: "card_delete" do %>
                 <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">×</span></button>
              <% end %>
              <div class="info">
