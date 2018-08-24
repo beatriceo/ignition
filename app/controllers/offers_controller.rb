@@ -44,7 +44,7 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @offer.destroy
-    redirect_to  pending_offers_path(current_user)
+    redirect_to offers_path(current_user)
   end
 
   private

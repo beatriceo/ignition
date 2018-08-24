@@ -11,8 +11,15 @@
       <div class="listing-card col-xs-12 col-md-6 col-lg-3 ">
         <h2><%= entry.transportation_type %></h2>
         <% entry.offers.each do |o| %>
-          <p><%= o.user.first_name %> <%= o.user.last_name %></p>
-          <%= link_to "delete_offer", delete_offer_path(o)  %>
+          <p><%= o.user.first_name %> <%= o.user.last_name %>
+            &nbsp;
+            <%= link_to listing_path(current_user, entry), method: :delete do %>
+              <i class="fas fa-check-circle accept"></i>
+            <% end %>
+            <%= link_to delete_path(current_user, o), method: :delete, data: { confirm: "Are you you want to reject #{o.user.first_name} #{o.user.last_name}'s offer?" } do %>
+              <i class="fas fa-times-circle reject"></i>
+            <% end %>
+          </p>
         <% end %>
       </div>
     <% end %>
