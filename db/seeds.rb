@@ -226,7 +226,7 @@ users = [{
         first_name: "Alex",
         last_name: "Jones",
         description: "Check out my Show InfoWars!",
-        photo:
+        # photo:
         }, {
         email: "5df35f32@yahoo.com",
         username: "Edward_ward@cool",
@@ -234,7 +234,7 @@ users = [{
         first_name: "Daniel",
         last_name: "Geisbrecht",
         description: "Am a proud black-hat hacker and wanted criminal",
-        photo:
+        # photo:
         }, {
         email: "giraffe@hotmail.co.uk",
         username: "George_D",
@@ -242,7 +242,7 @@ users = [{
         first_name: "Sarah",
         last_name: "McClymont",
         description: "Studying Biology",
-        photo:
+        # photo:
         }, {
         email: "test@test",
         username: "Andy1",
@@ -250,7 +250,7 @@ users = [{
         first_name: "Anonymous",
         last_name: "Person",
         description: "Does this person even exist?",
-        photo:
+        # photo:
         }, {
         email: "geoffe@devtalk.com",
         username: "A_Littmann",
@@ -258,7 +258,7 @@ users = [{
         first_name: "Geoffe",
         last_name: "Smith",
         description: "Freelance Developer at Devtalk",
-        photo:
+        # photo:
         }]
 
 puts "Adding Template Data to DB"
