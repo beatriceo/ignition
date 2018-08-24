@@ -49,7 +49,7 @@ class ListingsController < ApplicationController
 
   def update
     if @listing.update(listing_params)
-      redirect_to listing_path(@listing.user, @listing)
+      redirect_to listing_new_path(current_user)
     else
       render :edit
     end
@@ -78,7 +78,7 @@ class ListingsController < ApplicationController
   def destroy
     # user id
     @listing.destroy
-    redirect_to listings_path
+    redirect_to listing_new_path(current_user)
   end
 
   private
