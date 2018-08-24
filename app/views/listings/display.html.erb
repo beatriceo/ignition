@@ -35,7 +35,12 @@
           <div><h2>Location</h2> <%= @listing.location %></div>
         </div>
         <div class="profile">
-          <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %><span><%= @listing.user ? @listing.user.username : "No Username" %></span>
+          <% if @listing.user.photo.url.nil? %>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" class="img-circle">
+          <% else %>
+            <%= cl_image_tag  @listing.user.photo, class: "img-circle"%>
+          <% end %>
+          <span><%= @listing.user ? @listing.user.username : "No Username" %></span>
         </div>
       </div>
       <div class="description text-display">
@@ -60,7 +65,7 @@
             <p>-></p>
             <p><%= @listing.date_end %></p>
           </div>
-          <%= simple_form_for(@offer, url: offers_path(current_user)) do |f| %>
+          <%= simple_form_for(@offer, url: offers_path(@listing.user, current_user)) do |f| %>
             <%#= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
             <%= f.input :listing_id, as: :hidden, input_html: {value: @listing.id} %>
             <%= f.button :submit, class: "btn btn-primary btn-lg" %>
