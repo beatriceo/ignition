@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
   before_action :find_offer
   def new
+    @offer = Offer.new
     authorize @offer
   end
 
@@ -12,10 +13,23 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
+  def confirm
+    offer = Offer.new
+    offer.user = User.find(params[:user_id])
+    offer.listing = Listing.find(offer_params[:listing_id])
+
+    authorize offer
+    if offer.save
+      redirect_to pending_offers_path(offer.user)
+    else
+      render "listings/display"
+    end
+  end
+
   def index
     @restaurants = policy_scope(Offer).order(created_at: :desc)
     @user = User.find(params[:user_id])
-    @listings = @user.listings;
+    @listings = @user.listings
   end
 
   def pending
@@ -30,7 +44,9 @@ class OffersController < ApplicationController
 
   private
 
-  def offer_params; end
+  def offer_params
+    params.require(:offer).permit(:listing_id)
+  end
   def find_offer
     @user = User.find(params[:user_id])
     @listings = @user.listings

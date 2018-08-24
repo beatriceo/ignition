@@ -16,6 +16,10 @@ class OfferPolicy < ApplicationPolicy
     create?
   end
 
+  def confirm?
+    update?
+  end
+
   def create?
     true
   end

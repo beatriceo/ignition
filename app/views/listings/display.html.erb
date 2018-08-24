@@ -52,7 +52,21 @@
       </div> -->
     </div>
     <div class="right">
-      <div class="reserve"></div>
+      <div class="reserve">
+        <div>
+          <h1>Book</h1>
+          <div class="flex-date">
+            <p>Start Date</p>
+            <p>-></p>
+            <p>End Date</p>
+          </div>
+          <%= simple_form_for(@offer, url: offers_path(current_user)) do |f| %>
+            <%#= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+            <%= f.input :listing_id, as: :hidden, input_html: {value: @listing.id} %>
+            <%= f.button :submit, class: "btn btn-primary btn-lg" %>
+          <% end %>
+        </div>
+      </div>
 
       <div
         id="map"

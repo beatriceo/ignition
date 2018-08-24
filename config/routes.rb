@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   delete 'users/:user_id/offers/:id', to: "offers#destroy"
 
 
-  get '/users/:user_id/offers/pending/new', to: 'offers#new'
+  get '/users/:user_id/offers/pending/new', to: 'offers#new', as: :offer_new
   post '/users/:user_id/offers/pending', to: 'offers#create'
   get '/users/:user_id/offers/pending', to: 'offers#pending', as: :pending_offers
   delete 'users/:user_id/offers/pending', to: 'offers#cancel'
