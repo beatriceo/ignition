@@ -20,6 +20,7 @@ class ListingsController < ApplicationController
   end
 
   def display
+    @offer = Offer.new
     @listings = Listing.where.not(latitude: nil, longitude: nil)
     @markers = @listings.map do |listing|
       {
