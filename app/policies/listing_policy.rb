@@ -26,7 +26,6 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def create?
-    # raise
     record.user == user || user.admin
   end
 
