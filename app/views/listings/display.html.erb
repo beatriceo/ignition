@@ -56,9 +56,9 @@
         <div>
           <h1>Book</h1>
           <div class="flex-date">
-            <p>Start Date</p>
+            <p><%= @listing.date_start %></p>
             <p>-></p>
-            <p>End Date</p>
+            <p><%= @listing.date_end %></p>
           </div>
           <%= simple_form_for(@offer, url: offers_path(current_user)) do |f| %>
             <%#= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
