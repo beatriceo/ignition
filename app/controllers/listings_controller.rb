@@ -20,15 +20,26 @@ class ListingsController < ApplicationController
   def show
   end
 
+  # def display
+  #   @listings = Listing.where.not(latitude: nil, longitude: nil)
+  #   @markers = @listings.map do |listing|
+  #     {
+  #       lat: listing.latitude,
+  #       lng: listing.longitude
+  #       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+  #     }
+  #   end
+  # end
+  # # --- line 23 to 32 is to mark all the locations from every car on the map. but we only want to mark the location of the car we are currently looking at hence we need the code from line 34 to 42!! no need to loop do because .map will just return an array with all the locations but we only need one location. NB markers needs to be an array of hashes even if there is only one hash!
+
   def display
-    @listings = Listing.where.not(latitude: nil, longitude: nil)
-    @markers = @listings.map do |listing|
+    @markers = [
       {
-        lat: listing.latitude,
-        lng: listing.longitude
+        lat: @listing.latitude,
+        lng: @listing.longitude
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
-    end
+    ]
   end
 
   def edit
