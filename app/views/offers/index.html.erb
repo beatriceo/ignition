@@ -12,6 +12,7 @@
         <h2><%= entry.transportation_type %></h2>
         <% entry.offers.each do |o| %>
           <p><%= o.user.first_name %> <%= o.user.last_name %></p>
+          <%= link_to "delete_offer", delete_offer_path(o)  %>
         <% end %>
       </div>
     <% end %>

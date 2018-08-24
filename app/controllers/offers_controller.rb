@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :find_offer
+  before_action :find_offer, except: :destroy
   def new
     @offer = Offer.new
     authorize @offer
@@ -39,8 +39,13 @@ class OffersController < ApplicationController
     @offers = @user.offers
   end
 
+
   def destroy
+    # find offer
+    @offer = Offer.find(params[:id])
     authorize @offer
+    @offer.destroy
+    redirect_to  pending_offers_path(current_user)
   end
 
   private

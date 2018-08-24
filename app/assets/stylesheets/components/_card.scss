@@ -12,6 +12,7 @@
   height: 300px;
   box-shadow: 1px 1px 10px rgba(0,0,0, 0.21); // In memory of August 21 2018
   margin-bottom: 1em;
+  position: relative;
 
   img {
     width: 100%;
@@ -46,4 +47,10 @@
       }
     }
   }
+}
+
+.card_delete {
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }
