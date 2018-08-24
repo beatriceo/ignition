@@ -62,7 +62,7 @@
           <h1>Book</h1>
           <div class="flex-date">
             <p><%= @listing.date_start %></p>
-            <p>-></p>
+            <p><i class="fas fa-arrow-right"></i></p>
             <p><%= @listing.date_end %></p>
           </div>
           <%= simple_form_for(@offer, url: offers_path(@listing.user, current_user)) do |f| %>
