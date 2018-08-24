@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/offers', to: 'offers#index', as: :offers
   post 'users/:user_id/offers', to: 'offers#confirm'
-  delete 'users/:user_id/offers/:id', to: "offers#destroy"
+  delete 'users/:user_id/offers/:id', to: "offers#destroy", as: :delete
 
 
   get '/users/:user_id/offers/pending/new', to: 'offers#new', as: :offer_new

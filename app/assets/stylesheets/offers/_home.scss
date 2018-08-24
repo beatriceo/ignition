@@ -24,6 +24,18 @@
       height: 250px;
       width: 250px;
       margin: 1em;
+      .accept {
+        color: $primary;
+      }
+      .reject {
+        color: $secondary;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
       p {
         margin-left: .5em;
         margin-right: .5em;
