@@ -13,22 +13,34 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @listing.user = User.find(params[:user_id])
     authorize @listing
   end
 
   def show
   end
 
+  # def display
+  #   @listings = Listing.where.not(latitude: nil, longitude: nil)
+  #   @markers = @listings.map do |listing|
+  #     {
+  #       lat: listing.latitude,
+  #       lng: listing.longitude
+  #       # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+  #     }
+  #   end
+  # end
+  # # --- line 23 to 32 is to mark all the locations from every car on the map. but we only want to mark the location of the car we are currently looking at hence we need the code from line 37 to 44!! no need to loop do because .map will just return an array with all the locations but we only need one location. NB markers needs to be an array of hashes even if there is only one hash!
+
   def display
     @offer = Offer.new
-    @listings = Listing.where.not(latitude: nil, longitude: nil)
-    @markers = @listings.map do |listing|
+    @markers = [
       {
-        lat: listing.latitude,
-        lng: listing.longitude
+        lat: @listing.latitude,
+        lng: @listing.longitude
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
-    end
+    ]
   end
 
   def edit
@@ -38,7 +50,7 @@ class ListingsController < ApplicationController
 
   def update
     if @listing.update(listing_params)
-      redirect_to listing_path(@listing.user, @listing)
+      redirect_to listing_new_path(current_user)
     else
       render :edit
     end
@@ -53,7 +65,7 @@ class ListingsController < ApplicationController
     listing.user = User.find(params[:user_id])
 
     if listing.save
-      redirect_to listing_home_path(listing)
+      redirect_to listing_new_path(current_user)
     else
       render :new
     end
@@ -67,7 +79,7 @@ class ListingsController < ApplicationController
   def destroy
     # user id
     @listing.destroy
-    redirect_to listings_path
+    redirect_to listing_new_path(current_user)
   end
 
   private
