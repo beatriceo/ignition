@@ -1,11 +1,23 @@
-<div class="container">
-  <h1>Listings#new</h1>
-
-  <%= render 'form', listing: @listing %>
-
-  <%= link_to "Back to listings", listings_home_path, class: "btn btn-primary"  %>
+<div class="new-container">
+  <div class="left half">
+    <div class="listings-container">
+      <h2>Cars you are renting out</h2>
+      <div class="flex-row scroll">
+        <div class="center-cards">
+          <% Listing.where(user: current_user).each do |listing| %>
+            <%= link_to listing_home_path(listing), class: "card-link" do %>
+              <%= render "layouts/card", listing: listing %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right half">
+    <div class="form-container">
+      <h2>Rent out a car</h2>
+      <%= render 'form', listing: @listing %>
+    </div>
+  </div>
 </div>
-
-
-<!-- Listing.where(user: current_user) -->
 

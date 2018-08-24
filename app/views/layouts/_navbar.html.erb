@@ -36,8 +36,12 @@
       <% else %>
         <%= link_to "Offers", new_user_session_path %>
       <% end %>
-       <%= link_to "Rent", listings_home_path  %>
-       <a href="#">Rent Out</a>
+       <%= link_to "Rent", listings_home_path %>
+      <% if current_user %>
+        <%= link_to "Rent Out", listing_new_path(current_user) %>
+      <% else %>
+        <%= link_to "Rent Out", new_user_session_path %>
+      <% end %>
     </div>
     <div class="profile">
       <% if current_user.nil? %>
