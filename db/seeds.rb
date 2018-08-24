@@ -89,7 +89,7 @@ Offer.destroy_all
 
 puts "Creating Template Data..."
 
-# categories = ["Berline", "Sport", "SUV", "Crossover", "Coupe", "Convertible", "Van", "Limousine", "Minibus"]
+# categories = ["Berline", "Sport", "SUV", "Crossover", "Coupe", "Convertible", "Van", "Limousine", "Minibus", "Old"]
 listings = [{
             transportation_type: "Sport",
             cost: "100",
@@ -145,7 +145,7 @@ listings = [{
             photo: Rails.root.join("app/assets/images/cars/f.jpg").open,
             description: "Old car in a perfect state"
             }, {
-            transportation_type: "Convertible",
+            transportation_type: "Old",
             cost: "335",
             location: "Berlin",
             date_start: "2018/10/23",
@@ -172,7 +172,7 @@ listings = [{
             photo: Rails.root.join("app/assets/images/cars/i.jpg").open,
             description: "Blue BMW. Perfect state. Powerful car."
             },{
-            transportation_type: "Convertible",
+            transportation_type: "Old",
             cost: "485",
             location: "Rome",
             date_start: "2019/01/15",
