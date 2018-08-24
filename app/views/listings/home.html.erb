@@ -1,16 +1,11 @@
-<div class="listings-container">
-  <div class="flex-row">
-    <div class="center-cards">
-      <% @listings.each do |listing| %>
-        <%= link_to listing_home_path(listing), class: "card-link" do %>
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="flex-center">
           <%= render "layouts/card", listing: listing %>
-        <% end %>
-      <% end %>
-    </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-<% unless current_user.nil? %>
-  <%= link_to 'Make a new car', listing_new_path(current_user), class: "btn btn-primary"  %>
-<% end %>

@@ -33,8 +33,9 @@ class OffersController < ApplicationController
   end
 
   def pending
-    authorize @offer ? @offer : Offer.new
-    @user = User.find(params[:user_id])
+    offer = @offer ? @offer : Offer.new
+    offer.user = @user = User.find(params[:user_id])
+    authorize offer
     @offers = @user.offers
   end
 
