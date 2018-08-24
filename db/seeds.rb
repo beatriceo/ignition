@@ -93,127 +93,127 @@ listings = [{
     cost: "100",
     location: "London",
     date_start: "2018/08/23",
-    date_end: "2018/08/23",
+    date_end: "2018/08/25",
     rating: "4",
     photo: Rails.root.join("app/assets/images/b.jpg").open,
-    description: "something"
+    description: "Nice small blue car."
   }, {
     transportation_type: "car",
     cost: "400",
     location: "Paris",
-    date_start: "2018/08/23",
-    date_end: "2018/08/23",
+    date_start: "2018/09/23",
+    date_end: "2018/10/2",
     rating: "5",
     photo: Rails.root.join("app/assets/images/c.jpg").open,
-     description: "something"
+     description: "Beautiful grey convertible Mercedes."
     }, {
       transportation_type: "car",
       cost: "250",
       location: "copenhagen",
-      date_start: "2018/08/23",
-      date_end: "2018/08/23",
+      date_start: "2018/08/25",
+      date_end: "2018/08/26",
       rating: "5",
       photo: Rails.root.join("app/assets/images/d.jpg").open,
-      description: "something"
+      description: "Big hummer. Perfect car for trips in the desert"
       }, {
         transportation_type: "car",
         cost: "385",
         location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        date_start: "2018/08/27",
+        date_end: "2018/08/30",
         rating: "3",
         photo: Rails.root.join("app/assets/images/e.jpg").open,
-        description: "something"
+        description: "Impressive yellow audi. Fast and powerfull car."
         }, {
             transportation_type: "car",
             cost: "100",
             location: "copenhagen",
-            date_start: "2018/08/23",
-            date_end: "2018/08/23",
+            date_start: "2018/09/08",
+            date_end: "2018/09/13",
             rating: "3",
             photo: Rails.root.join("app/assets/images/auto.jpg").open,
-            description: "something"
+            description: "old car with swag"
           }, {
         transportation_type: "car",
         cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        location: "Prague",
+        date_start: "2018/09/12",
+        date_end: "2018/09/14",
         rating: "3",
         photo: Rails.root.join("app/assets/images/f.jpg").open,
-        description: "something"
+        description: "Old car in a perfect state"
         }, {
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "335",
+        location: "Berlin",
+        date_start: "2018/10/23",
+        date_end: "2018/11/02",
         rating: "3",
         photo: Rails.root.join("app/assets/images/g.jpg").open,
-        description: "something"
+        description: "Very old car with room on the roof for the luggages."
         }, {
         transportation_type: "car",
         cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        location: "Tel aviv",
+        date_start: "2018/11/23",
+        date_end: "2018/11/28",
         rating: "3",
         photo: Rails.root.join("app/assets/images/h.jpg").open,
-        description: "something"
+        description: "Magnificent red Mercedes in a great condition"
         },{
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "285",
+        location: "Antwerp, Belgium",
+        date_start: "2018/09/13",
+        date_end: "2018/10/23",
         rating: "3",
         photo: Rails.root.join("app/assets/images/i.jpg").open,
-        description: "something"
+        description: "Blue BMW. Perfect state. Powerful car."
         },{
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "485",
+        location: "Rome",
+        date_start: "2019/01/15",
+        date_end: "2019/01/23",
         rating: "3",
         photo: Rails.root.join("app/assets/images/j.jpg").open,
-        description: "something"
+        description: "Cute old car."
         },{
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
+        cost: "320",
+        location: "Rio de Janeiro",
         date_start: "2018/08/23",
         date_end: "2018/08/23",
         rating: "3",
         photo: Rails.root.join("app/assets/images/k.jpg").open,
-        description: "something"
+        description: "Beautiful and classy."
         },{
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "285",
+        location: "Brussels",
+        date_start: "2018/09/18",
+        date_end: "2018/09/20",
         rating: "3",
         photo: Rails.root.join("app/assets/images/l.jpg").open,
-        description: "something"
+        description: "Blue audi, in a good condition. Perfect to start your day with."
         },{
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "155",
+        location: "China",
+        date_start: "2018/10/13",
+        date_end: "2018/10/14",
         rating: "3",
         photo: Rails.root.join("app/assets/images/m.jpg").open,
-        description: "something"
+        description: "Blue car with swag and class."
         }, {
         transportation_type: "car",
-        cost: "385",
-        location: "casablanca",
-        date_start: "2018/08/23",
-        date_end: "2018/08/23",
+        cost: "235",
+        location: "California",
+        date_start: "2018/09/07",
+        date_end: "2018/09/09",
         rating: "3",
         photo: Rails.root.join("app/assets/images/n.jpg").open,
-        description: "something"
+        description: "Black car perfect for 2 people "
         }]
 
 
