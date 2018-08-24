@@ -1,3 +1,7 @@
-<h1>Listings#edit</h1>
-<%= render 'form', listing: @listing %>
-<%= link_to "Back to listings", listing_path(@listing.user, @listing), class: "btn btn-primary"  %>
+<div class="edit-container">
+  <div class="form-container">
+    <h2>Editing a listing</h2>
+    <%= render 'form', listing: @listing %>
+    <%= link_to "Back to listings", listing_path(@listing.user, @listing), class: "btn btn-primary"  %>
+  </div>
+</div>

@@ -8,6 +8,14 @@
             <%= link_to listing_home_path(listing), class: "card-link" do %>
               <%= render "layouts/card", listing: listing %>
             <% end %>
+            <div class="icons">
+              <%= link_to listing_path(current_user, listing), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+              <%= link_to listing_edit_path(current_user, listing) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
