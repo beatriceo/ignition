@@ -35,7 +35,7 @@
           <div><h2>Location</h2> <%= @listing.location %></div>
         </div>
         <div class="profile">
-          <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %><span><%= @listing.user.username %></span>
+          <%= image_tag "https://avatars2.githubusercontent.com/u/40055789?v=4", class: "img-circle" %><span><%= @listing.user ? @listing.user.username : "No Username" %></span>
         </div>
       </div>
       <div class="description text-display">
