@@ -2,6 +2,6 @@
   <div class="form-container">
     <h2>Editing a listing</h2>
     <%= render 'form', listing: @listing %>
-    <%= link_to "Back to listings", listing_path(@listing.user, @listing), class: "btn btn-primary"  %>
+    <%= link_to "Back to my listings", listing_new_path(current_user), class: "btn btn-primary"  %>
   </div>
 </div>
