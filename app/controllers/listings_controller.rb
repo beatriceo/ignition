@@ -13,6 +13,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @listing.user = User.find(params[:user_id])
     authorize @listing
   end
 
