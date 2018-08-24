@@ -15,11 +15,11 @@ class OffersController < ApplicationController
 
   def confirm
     offer = Offer.new
-    offer.user = User.find(params[:user_id])
+    offer.user = current_user
     offer.listing = Listing.find(offer_params[:listing_id])
 
     authorize offer
-    if offer.save
+    if offer.save!
       redirect_to pending_offers_path(offer.user)
     else
       render "listings/display"
@@ -33,10 +33,9 @@ class OffersController < ApplicationController
   end
 
   def pending
-    offer = @offer ? @offer : Offer.new
-    offer.user = @user = User.find(params[:user_id])
-    authorize offer
-    @offers = @user.offers
+    @offer = Offer.first
+    authorize @offer
+    @offers = current_user.offers
   end
 
 
@@ -53,6 +52,7 @@ class OffersController < ApplicationController
   def offer_params
     params.require(:offer).permit(:listing_id)
   end
+
   def find_offer
     @user = User.find(params[:user_id])
     @listings = @user.listings
